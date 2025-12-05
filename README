@@ -1,4 +1,5 @@
-SEMUA INI HANYA REKAYASA SEMATA UNTUK BELAJAR SENDIRI
+Semua ini hanya rekayasa semata untuk belajar sendiri.
+All of this is just a ploy to learn on my own.
 
 # saucedemo playwright mini project
 
@@ -21,8 +22,10 @@ this project focuses on **login feature testing** on [https://www.saucedemo.com]
 ### login feature
 
 * positive login:
+
   * valid username
   * valid password
+
 * negative login:
 
   * invalid username
