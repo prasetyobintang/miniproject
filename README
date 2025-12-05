@@ -20,7 +20,9 @@ this project focuses on **login feature testing** on [https://www.saucedemo.com]
 
 ### login feature
 
-* positive login
+* positive login:
+  * valid username
+  * valid password
 * negative login:
 
   * invalid username
