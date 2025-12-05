@@ -33,6 +33,7 @@ this project focuses on **login feature testing** on [https://www.saucedemo.com]
   * empty username
   * empty password
   * empty username & password
+  
 * special case:
 
   * locked out user
