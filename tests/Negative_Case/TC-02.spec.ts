@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test.describe('TC-02 - Negative Login', () => {
+    test('User gagal login menggunakan username salah dan password valid', async ({ page }) => {
+        // Identify Credential:
+        const username = 'username';
+        const password = 'secret_sauce';
+
+        // Step 1: Navigate to the login page
+        await page.goto('https://www.saucedemo.com/');
+
+        // Step 2: Enter invalid username and valid password
+        await page.fill('#user-name', username);
+        // Optional Screenshot after filling username
+        await page.screenshot({ path: 'screenshots/TC-02-username-filled.png' });
+
+        await page.fill('#password', password);
+        // Optional Screenshot after filling password
+        await page.screenshot({ path: 'screenshots/TC-02-password-filled.png' });
+
+        // Step 3: Click the login button
+        await page.click('#login-button');
+
+        // Step 4: Verify unsuccessful login by checking the error message
+        const errorMessage = page.locator('[data-test="error"]');
+        await expect(errorMessage).toBeVisible();
+        await expect(errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
+        // Take a screenshot of the error message
+        await page.screenshot({ path: 'screenshots/TC-02-login-failed-username.png' });
+    })
+})
