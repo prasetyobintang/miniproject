@@ -3,14 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('TC-02 - Negative Login', () => {
     test('User gagal login menggunakan username salah dan password valid', async ({ page }) => {
         // Identify Credential:
-        const username = 'username';
-        const password = 'secret_sauce';
+        const username = 'standard_user';   // init credential
+        const password = 'secret_sauce';    // init credential
 
         // Step 1: Navigate to the login page
         await page.goto('https://www.saucedemo.com/');
 
         // Step 2: Enter invalid username and valid password
-        await page.fill('#user-name', username);
+        await page.fill('#user-name', "username");
         // Optional Screenshot after filling username
         await page.screenshot({ path: 'screenshots/TC-02-username-filled.png' });
 

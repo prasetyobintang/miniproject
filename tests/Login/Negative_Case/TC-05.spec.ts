@@ -7,8 +7,8 @@ test.describe('TC-05 - Negative Login', () => {
     // Empty password field with valid username
     test('User gagal login menggunakan username valid dan password kosong', async ({ page }) => {
         // Identify Credential: 
-        const username = 'standard_user';
-        const password = '';
+        const username = 'standard_user';   // init credential
+        const password = 'secret_sauce';    // init credential
 
         // Step 1: Navigate to the login page
         await page.goto('https://www.saucedemo.com/');

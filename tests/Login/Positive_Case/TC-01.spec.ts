@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 test.describe('TC-01 - Positive Login', () => {
     test('User berhasil login menggunakan credential valid', async ({ page }) => {
         // Identify Credential:
-        const username = 'standard_user';
-        const password = 'secret_sauce';
+        const username = 'standard_user';   // init credential
+        const password = 'secret_sauce';   // init credential
 
         // Step 1: Navigate to the login page
         await page.goto('https://www.saucedemo.com/');
