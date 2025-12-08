@@ -28,19 +28,22 @@ test.describe('TC-06 - Negative Login', () => {
         // Step 3: Click the login button
         await page.click('#login-button');
 
-        // Step 4: Validate if username empty will appear message : 'Epic sadface: Username is required'
+        /*
+        Verify the condition if:
+        a. Both username and password are empty, the error message should indicate that the username is required.
+        b. If only the username is empty, the error message should indicate that the username is required.
+        c. If only the password is empty, the error message should indicate that the password is required.
+        */
+
+        // Condition a: Both username and password are empty
         const errorMessage = page.locator('[data-test="error"]');
         await expect(errorMessage).toBeVisible();
         await expect(errorMessage).toHaveText('Epic sadface: Username is required');
+
+        // Condition b and c
+        // (These conditions are already covered in TC-04 and TC-05 respectively)
+
         // Take a screenshot of the error message
         await page.screenshot({ path: 'screenshots/TC-06-login-failed-username-password-empty.png' });
-
-        // Step 5: Validate if password empty will appear message : 'Epic sadface: Password is required'
-        // Clear the username field to test password empty scenario
-        await page.fill('#user-name', username);
-        await page.fill('#password', '');
-        await page.click('#login-button');
-        // Take a screenshot of the error message
-        await page.screenshot({ path: 'screenshots/TC-06-login-failed-password-empty.png' });
     })
 })
