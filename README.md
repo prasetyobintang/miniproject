@@ -56,7 +56,7 @@ manual test case is written separately and translated into automation scenarios:
 * TC-01: login with valid credential
 * TC-02: login with invalid username
 * TC-03: login with invalid password
-* TC-06: empty username/password validation
+* TC-04, TC-05, TC-06: empty username/password validation
 * TC-07: login with locked out user
 
 ### cart
