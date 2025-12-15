@@ -4,7 +4,7 @@ All of this is just a ploy to learn on my own.
 # saucedemo playwright mini project
 
 mini automation project for web testing using **playwright + typescript**.
-this project focuses on **login feature testing** on [https://www.saucedemo.com](https://www.saucedemo.com) as a foundation for further automation.
+this project focuses on **login and cart feature testing** on https://www.saucedemo.com as a foundation for further automation.
 
 ---
 
@@ -38,17 +38,33 @@ this project focuses on **login feature testing** on [https://www.saucedemo.com]
 
   * locked out user
 
+### cart feature
+
+* add item to cart from inventory page
+* remove item from inventory page
+* navigate to cart page via cart icon
+* remove item from cart page
+* continue shopping from cart page
+
 ---
 
 ## test case reference
 
 manual test case is written separately and translated into automation scenarios:
 
+### login
 * TC-01: login with valid credential
 * TC-02: login with invalid username
 * TC-03: login with invalid password
-* TC-06: The username and password fields generate the same error when the username/password field is left blank.
+* TC-06: empty username/password validation
 * TC-07: login with locked out user
+
+### cart
+* TC-01: add item to cart
+* TC-02: remove item from inventory page
+* TC-03: navigate to cart page
+* TC-04: remove item from cart page
+* TC-05: continue shopping from cart page
 
 ---
 
@@ -109,5 +125,7 @@ npx playwright show-report
 ## notes
 
 * this project is built as a **learning & portfolio mini project**
+* test documentation (scope, scenario, test case) is written before automation
+* current automation covers login and cart features
 * CI/CD with GitHub Actions will be added in the next phase
-* test scope will be expanded to dashboard, sorting, cart, and checkout in future updates
+
