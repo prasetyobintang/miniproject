@@ -65,7 +65,7 @@ manual test case is written separately and translated into automation scenarios:
 * TC-03: navigate to cart page
 * TC-04: remove item from cart page
 * TC-05: continue shopping from cart page
-* TC-06: continue shopping after remove item and checking cart
+* TC-06: continue shopping after remove item and checking back cart page
 
 ---
 
