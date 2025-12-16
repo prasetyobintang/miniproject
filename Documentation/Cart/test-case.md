@@ -99,3 +99,20 @@
 
 * User is redirected back to inventory page
 * URL changes to [https://www.saucedemo.com/inventory.html](https://www.saucedemo.com/inventory.html)
+
+## TC-06 — Continue Shopping from Cart Page After Removing Item and Checking Cart Page to Validate
+
+**Scenario Type:** Positive
+
+**Page:** [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
+
+**Steps:**
+
+1. Click **Remove** button inside Cart Page
+2. Click the **Continue Shopping** button
+
+**Expected Result:**
+
+* User is redirected back to inventory page
+* URL changes to [https://www.saucedemo.com/inventory.html](https://www.saucedemo.com/inventory.html)
+* Item on Cart Page is 0
