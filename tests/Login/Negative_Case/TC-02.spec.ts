@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('TC-02 - Negative Login', () => {
-    test('User gagal login menggunakan username salah dan password valid', async ({ page }) => {
+test.describe('User gagal login menggunakan username salah dan password valid', () => {
+    test('TC-02 Login - Negative Login', async ({ page }) => {
         // Identify Credential:
         const username = 'standard_user';   // init credential
         const password = 'secret_sauce';    // init credential
@@ -12,12 +12,11 @@ test.describe('TC-02 - Negative Login', () => {
         // Step 2: Enter invalid username and valid password
         await page.fill('#user-name', "username");
         // Optional Screenshot after filling username
-        await page.screenshot({ path: 'screenshots/TC-02-username-filled.png' });
+        await page.screenshot({ path: 'screenshots/Login/TC-02-username-filled.png' });
 
         await page.fill('#password', password);
         // Optional Screenshot after filling password
-        await page.screenshot({ path: 'screenshots/TC-02-password-filled.png' });
-
+        await page.screenshot({ path: 'screenshots/Login/TC-02-password-filled.png' });
         // Step 3: Click the login button
         await page.click('#login-button');
 
@@ -26,6 +25,6 @@ test.describe('TC-02 - Negative Login', () => {
         await expect(errorMessage).toBeVisible();
         await expect(errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
         // Take a screenshot of the error message
-        await page.screenshot({ path: 'screenshots/TC-02-login-failed-username.png' });
+        await page.screenshot({ path: 'screenshots/Login/TC-02-login-failed-username.png' });
     })
 })

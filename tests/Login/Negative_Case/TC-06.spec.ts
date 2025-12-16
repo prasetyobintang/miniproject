@@ -3,10 +3,10 @@ import { test, expect } from '@playwright/test';
 
 // Define the test suite for negative login case TC-06
 // This test checks the behavior when both username and password fields are left empty
-test.describe('TC-06 - Negative Login', () => {
+test.describe('User gagal login menggunakan username kosong dan password kosong', () => {
     // Define the individual test
     // Both username and password fields are empty
-    test('User gagal login menggunakan username kosong dan password kosong', async ({ page }) => {
+    test('TC-06 Login - Negative Login Empty Username and Password', async ({ page }) => {
         // Identify Credential: 
         const username = 'standard_user';   // init credential
         const password = 'secret_sauce';    // init credential
@@ -18,12 +18,11 @@ test.describe('TC-06 - Negative Login', () => {
         await page.fill('#user-name', '');
 
         // Optional Screenshot after filling username
-        await page.screenshot({ path: 'screenshots/TC-06-username-filled.png' });
+        await page.screenshot({ path: 'screenshots/Login/TC-06-username-filled.png' });
 
         await page.fill('#password', '');
         // Optional Screenshot after filling password
-        await page.screenshot({ path: 'screenshots/TC-06-password-filled.png' });
-
+        await page.screenshot({ path: 'screenshots/Login/TC-06-password-filled.png' });
 
         // Step 3: Click the login button
         await page.click('#login-button');
@@ -44,6 +43,6 @@ test.describe('TC-06 - Negative Login', () => {
         // (These conditions are already covered in TC-04 and TC-05 respectively)
 
         // Take a screenshot of the error message
-        await page.screenshot({ path: 'screenshots/TC-06-login-failed-username-password-empty.png' });
+        await page.screenshot({ path: 'screenshots/Login/TC-06-login-failed-username-password-empty.png' });
     })
 })
