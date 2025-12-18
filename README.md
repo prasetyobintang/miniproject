@@ -46,6 +46,13 @@ this project focuses on **login and cart feature testing** on https://www.sauced
 * remove item from cart page
 * continue shopping from cart page
 
+### reorder / item filter
+
+* name (A - Z)
+* name (Z - A)
+* price (low to high)
+* price (high to low)
+
 ---
 
 ## test case reference
@@ -66,6 +73,13 @@ manual test case is written separately and translated into automation scenarios:
 * TC-04: remove item from cart page
 * TC-05: continue shopping from cart page
 * TC-06: continue shopping after remove item and checking back cart page
+
+### reorder / filter
+* TC-01: reorder / filter with name A - Z
+* TC-02: reorder / filter with name Z - A
+* TC-03: reorder / filter with price low to high
+* TC-04: reorder / filter with price high to low
+* TC-05: active value on dropdown
 
 ---
 
@@ -127,6 +141,6 @@ npx playwright show-report
 
 * this project is built as a **learning & portfolio mini project**
 * test documentation (scope, scenario, test case) is written before automation
-* current automation covers login and cart features
+* current automation covers login, cart features, and filter
 * CI/CD with GitHub Actions will be added in the next phase
 
