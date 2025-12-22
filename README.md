@@ -79,7 +79,8 @@ manual test case is written separately and translated into automation scenarios:
 * TC-02: reorder / filter with name Z - A
 * TC-03: reorder / filter with price low to high
 * TC-04: reorder / filter with price high to low
-* TC-05: active value on dropdown
+* TC-05: reorder / filter from high to low back to A - Z
+* TC-06: active value on dropdown 'A - Z' to low to high
 
 ---
 
