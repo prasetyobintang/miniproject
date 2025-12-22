@@ -120,4 +120,21 @@ test.describe('Filter and Sort', () => {
         // Verify that the first product name is "Sauce Labs Backpack"
         expect(names[0]).toBe('Sauce Labs Backpack');
     });
+
+    test('TC-06 Sort: active value on dropdown', async ({ page }) => {
+        // Get the active value of the dropdown
+        const activeValue = await page.$eval('.product_sort_container', el => (el as HTMLSelectElement).value);
+        // Verify that the active value is "az"
+        expect(activeValue).toBe('az');
+        // Take Screenshot of the active value
+        await page.screenshot({ path: 'screenshots/Filter/Filter_Sort_TC-06_active_value_dropdown_initial.png' });
+        // Change active value to "lohi"
+        await page.selectOption('.product_sort_container', 'lohi');
+        // Get the new active value of the dropdown
+        const newActiveValue = await page.$eval('.product_sort_container', el => (el as HTMLSelectElement).value);
+        // Verify that the new active value is "lohi"
+        expect(newActiveValue).toBe('lohi');
+        // Take Screenshot of the active value
+        await page.screenshot({ path: 'screenshots/Filter/Filter_Sort_TC-06_active_value_dropdown.png' });
+    });
 });
