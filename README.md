@@ -53,6 +53,13 @@ this project focuses on **login and cart feature testing** on https://www.sauced
 * price (low to high)
 * price (high to low)
 
+### checkout 
+* navigate to checkout page
+* input user information
+* checkout overview validation
+* complete checkout
+* error handling checkout form
+
 ---
 
 ## test case reference
@@ -81,6 +88,13 @@ manual test case is written separately and translated into automation scenarios:
 * TC-04: reorder / filter with price high to low
 * TC-05: reorder / filter from high to low back to A - Z
 * TC-06: active value on dropdown 'A - Z' to low to high
+
+### checkout
+* TC-01: successful checkout with valid data
+* TC-02: checkout with empty first name
+* TC-03: checkout with empty last name
+* TC-04: checkout with empty postal code
+* TC-05: checkout without item
 
 ---
 
