@@ -3,10 +3,10 @@ import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 
 // describe the test suite
-test.describe('Successful Checkout With Valid Data', () => {
+test.describe('Checkout - Positive Flow', () => {
 
     // define the test case
-    test('TC-01 Checkout: Successful Checkout', async ({ page }) => {
+    test('TC-01 Checkout: Successful checkout with valid data', async ({ page }) => {
         // navigate to the application
         await page.goto('http://www.saucedemo.com/');
 
@@ -53,11 +53,15 @@ test.describe('Successful Checkout With Valid Data', () => {
         await expect(page).toHaveURL('https://www.saucedemo.com/checkout-step-one.html');
 
         // fill in checkout information
-        // use faker dummy data for first name, last name, and postal code
-        const firstName = faker.person.firstName();
-        const lastName = faker.person.lastName();
-        const postalCode = faker.location.zipCode('#####');
+        // checkout payload with faker
+        const checkoutData = {
+            firstName: faker.person.firstName(),
+            lastName: faker.person.lastName(),
+            postalCode: faker.location.zipCode('#####')
+        };
+        const { firstName, lastName, postalCode } = checkoutData;
 
+        // use faker dummy data for first name, last name, and postal code
         await page.fill('[data-test="firstName"]', firstName);
         await page.fill('[data-test="lastName"]', lastName);
         await page.fill('[data-test="postalCode"]', postalCode);
